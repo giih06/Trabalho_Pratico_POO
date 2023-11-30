@@ -1,6 +1,6 @@
 package entities;
 
-public class RoupaTamanhoUnico extends Peca implements Item{
+public class RoupaTamanhoUnico extends Peca {
 
     // construtor
     public RoupaTamanhoUnico(String descricao, int quantidade, int estoqueMinimo, int estoqueMaximo) {
@@ -9,8 +9,8 @@ public class RoupaTamanhoUnico extends Peca implements Item{
 
     @Override
     public void venda() {
-        if(this.quantidade > 0) {
-            this.quantidade --;
+        if(getQuantidade() > 0) {
+            setQuantidade(getQuantidade() - 1);
             System.out.println("Venda realizada com sucesso!");
         } else {
             System.out.println("Quantidade insuficiente no estoque");
