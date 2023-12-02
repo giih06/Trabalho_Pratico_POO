@@ -2,7 +2,7 @@ package entities;
 
 import java.util.Scanner;
 
-public class Acessorio extends Peca {
+public class Acessorio extends Peca implements Item{
     // construtor
     public Acessorio(String descricao, int quantidade, int estoqueMinimo, int estoqueMaximo) {
         super(descricao, quantidade, estoqueMinimo, estoqueMaximo);

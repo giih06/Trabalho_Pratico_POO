@@ -1,6 +1,6 @@
 package entities;
 
-public class RoupaTamanhoUnico extends Peca {
+public class RoupaTamanhoUnico extends Peca implements Item {
 
     // construtor
     public RoupaTamanhoUnico(String descricao, int quantidade, int estoqueMinimo, int estoqueMaximo) {

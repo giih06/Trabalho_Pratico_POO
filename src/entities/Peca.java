@@ -1,6 +1,6 @@
 package entities;
 
-public abstract class Peca implements Item {
+public abstract class Peca {
     // atributos
     protected String descricao;
     protected int quantidade;

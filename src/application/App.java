@@ -18,7 +18,6 @@ public class App {
         estoque[2] = new RoupaPMG("Biquini", 5, 4, 2, 5, 30);
         estoque[3] = new RoupaPMG("Sutiã", 7, 6, 8, 1, 29);
         estoque[4] = new Acessorio("Colar", 12, 3, 33);
-        int opcao;
         while (true) {
             System.out.println("Escolha uma opção");
             for(int i=0; i<estoque.length; i++) {
@@ -26,7 +25,7 @@ public class App {
             }
             System.out.println("5 - Sair do sistema");
 
-            opcao = sc.nextInt();
+            int opcao = sc.nextInt();
 
             if (opcao >= 0 && opcao < estoque.length) {
                 estoque[opcao].venda();
@@ -35,6 +34,10 @@ public class App {
                 break;
             } else {
                 System.out.println("Opção inválida, tente novamente");
+            }
+            System.out.println("Estoque atualizado");
+            for(Peca peca : estoque) {
+                System.out.println(peca.getDescricao() + ": " + peca.getQuantidade());
             }
         }
 

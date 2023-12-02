@@ -2,7 +2,7 @@ package entities;
 
 import java.util.Scanner;
 
-public class RoupaPMG extends Peca {
+public class RoupaPMG implements Item {
     // atributos
     protected int quantidadeP;
     protected int quantidadeM;
@@ -10,7 +10,6 @@ public class RoupaPMG extends Peca {
 
     // construtor
     public RoupaPMG(String descricao, int quantidadeP, int quantidadeM, int quantidadeG, int estoqueMinimo, int estoqueMaximo) {
-        super(descricao, quantidadeG, estoqueMinimo, estoqueMaximo);
         this.quantidadeP = quantidadeP;
         this.quantidadeM = quantidadeM;
         this.quantidadeG = quantidadeG;
@@ -39,11 +38,35 @@ public class RoupaPMG extends Peca {
     @Override
     public void reposicaoEstoque() {
         if (this.quantidadeP < this.estoqueMinimo) {
-            this.quantidadeP = this.estoqueMinimo;
+            this.quantidadeP = this.estoqueMaximo;
         } else if (this.quantidadeM < this.estoqueMinimo) {
-            this.quantidadeM = this.estoqueMinimo;
+            this.quantidadeM = this.estoqueMaximo;
         } else if (this.quantidadeG < this.estoqueMinimo) {
-            this.quantidadeG = this.estoqueMinimo;
+            this.quantidadeG = this.estoqueMaximo;
         }
+    }
+
+    public int getQuantidadeP() {
+        return quantidadeP;
+    }
+
+    public void setQuantidadeP(int quantidadeP) {
+        this.quantidadeP = quantidadeP;
+    }
+
+    public int getQuantidadeM() {
+        return quantidadeM;
+    }
+
+    public void setQuantidadeM(int quantidadeM) {
+        this.quantidadeM = quantidadeM;
+    }
+
+    public int getQuantidadeG() {
+        return quantidadeG;
+    }
+
+    public void setQuantidadeG(int quantidadeG) {
+        this.quantidadeG = quantidadeG;
     }
 }
